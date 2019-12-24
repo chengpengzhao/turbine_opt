@@ -8,9 +8,9 @@
 Build  : dev-7cd43ea5f827
 Exec   : checkMesh
 Date   : Dec 24 2019
-Time   : 19:35:24
+Time   : 23:30:59
 Host   : "chengpeng-zhao"
-PID    : 26175
+PID    : 32527
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
 nProcs : 1
@@ -75,15 +75,15 @@ Checking geometry...
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (-3.6648e-20 -8.84674e-20 4.71017e-17) OK.
-    Max cell openness = 2.20468e-16 OK.
-    Max aspect ratio = 6.41815 OK.
-    Minimum face area = 4.821e-07. Maximum face area = 0.000187153.  Face area magnitudes OK.
-    Min volume = 6.11064e-10. Max volume = 1.87153e-07.  Total volume = 0.000534974.  Cell volumes OK.
-    Mesh non-orthogonality Max: 44.0191 average: 15.3669
+    Boundary openness (-3.86182884e-20 2.279661208e-19 -2.900016724e-17) OK.
+    Max cell openness = 2.269005261e-16 OK.
+    Max aspect ratio = 6.418056481 OK.
+    Minimum face area = 4.8208885e-07. Maximum face area = 0.000187150527.  Face area magnitudes OK.
+    Min volume = 6.110499592e-10. Max volume = 1.87150527e-07.  Total volume = 0.0005349742785.  Cell volumes OK.
+    Mesh non-orthogonality Max: 44.01588397 average: 15.36692458
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 0.974617 OK.
+    Max skewness = 0.974665099 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.

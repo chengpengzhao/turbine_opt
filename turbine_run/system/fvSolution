@@ -1,0 +1,99 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solvers
+{
+    p
+    {
+        solver          GAMG;
+        tolerance       1e-04;
+        relTol          0.01;
+        smoother        GaussSeidel;
+    }
+    pFinal
+    {
+        $p;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
+    }
+
+    U
+    {
+        solver          smoothSolver;
+        smoother        GaussSeidel;
+        nSweeps         2;
+        tolerance       1e-04;
+        relTol          0.01;
+    }
+    UFinal
+    {
+        $U;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
+    }
+    nuTilda
+    {
+        solver          smoothSolver;
+        smoother        GaussSeidel;
+        nSweeps         2;
+        tolerance       1e-04;
+        relTol          0.01;
+    }
+    nuTildaFinal
+    {
+        $nuTilda;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
+    }
+}
+
+PIMPLE
+{
+    correctPhi          no;
+    nOuterCorrectors    10; 
+    nCorrectors         2; 
+    nNonOrthogonalCorrectors 1; 
+    pRefCell            0;
+    pRefValue           0;
+
+    residualControl
+    {
+        p               1e-3;
+        U               1e-3;
+        nuTilda         1e-3;
+    }
+}
+
+relaxationFactors
+{
+    fields
+    {
+        p               0.7;
+    }
+    equations
+    {
+        U               0.7;
+        nuTilda         0.7;
+    }
+}
+
+cache
+{
+    grad(U);
+}
+
+// ************************************************************************* //

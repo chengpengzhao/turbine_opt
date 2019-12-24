@@ -1,0 +1,58 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : createPatch -overwrite
+Date   : Dec 24 2019
+Time   : 23:31:20
+Host   : "chengpeng-zhao"
+PID    : 32560
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading createPatchDict
+
+Adding new patch AMI_out as patch 9 from 
+{
+    type            cyclicAMI;
+    neighbourPatch  AMI_in;
+    transform       noOrdering;
+}
+
+Adding new patch AMI_in as patch 10 from 
+{
+    type            cyclicAMI;
+    neighbourPatch  AMI_out;
+    transform       noOrdering;
+}
+
+
+Moving faces from patch interface_out to patch 9
+Moving faces from patch interface_in to patch 10
+
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removing zero-sized patch interface_in type patch at position 4
+Removing zero-sized patch interface_out type patch at position 8
+Removing patches.
+Writing repatched mesh to 0
+
+End
+

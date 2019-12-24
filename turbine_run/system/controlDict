@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//OpenFOAM7 :The dynamic mesh functionality in pimpleDyMFoam has been merged into pimpleFoam
+
+application     pimpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1;
+
+deltaT          2e-3;
+
+writeControl    adjustableRunTime;
+
+writeInterval   2.5e-2;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  10;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   10;
+
+runTimeModifiable true;
+
+adjustTimeStep  no;
+
+maxCo           30;
+
+functions 
+{
+
+    #include "yPlus"
+    #include "forces"
+    residuals
+    {
+        type            residuals;
+        functionObjectLibs ("libutilityFunctionObjects.so");
+        enabled         true;
+        outputControl   timeStep;
+        outputInterval  1;
+
+        fields
+        (
+            p
+            U
+            nut
+	    nuTilda
+        );
+    }
+};
+
+// ************************************************************************* //

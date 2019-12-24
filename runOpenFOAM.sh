@@ -1,9 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 cd ${0%/*} || exit 1    # Run from this directory
 #------------------------------------------------------------------------------
 # generate mesh
 echo "Generation mesh for turbineRegion and outRegion..."
-
 if [ -d  outRegionMesh ];then
 rm -rf  outRegionMesh
 fi
@@ -14,6 +13,7 @@ fi
 mkdir outRegionMesh;
 mkdir turbineRegionMesh;
 
+# adjust patches and cellZones
 cp -r turbine_template/* outRegionMesh;
 cp -r turbine_template/* turbineRegionMesh;
 python3 PARSEC_turbine.py;
@@ -30,7 +30,7 @@ createPatch -overwrite > log.createPatch;
 mv system/outRegion_topoSetDict system/topoSetDict;
 topoSet > log.topoSet;
 echo "outRegion mesh, accomplished..."
-paraFoam &
+
 cd ..;
 cd turbineRegionMesh;
 blockMesh > log.blockMesh;
@@ -41,10 +41,25 @@ createPatch -overwrite > log.createPatch;
 mv system/turbineRegion_topoSetDict system/topoSetDict;
 topoSet > log.topoSet;
 echo "turbineRegionMesh, accomplished..."
-#caseName="turbine_run";
-#runpath="./${caseName}";
-#if [ -d ${runpath} ];then
-#echo "Delete files......\n\n"
-#rm -rf ${runpath}
-#fi
-#echo "Clone Case..."
+cd ..;
+
+#------------------------------------------------------------------------------
+# build final mesh
+caseName="turbine_run";
+runpath="./${caseName}";
+if [ -d ${runpath} ];then
+echo "Delete files......"
+rm -rf ${runpath}
+fi
+
+cp -r turbineRegionMesh/ ${runpath}
+cd ${runpath}
+rm log.*
+echo "Merge meshes..."
+mergeMeshes . ../outRegionMesh -overwrite > log.mergeMeshes
+renumberMesh -overwrite >log.renumberMesh;
+checkMesh > log.checkMesh;
+mv system/final_createPatchDict system/createPatchDict;
+createPatch -overwrite > log.createPatch;
+cp 0.orig/* 0
+echo "All done! ..."

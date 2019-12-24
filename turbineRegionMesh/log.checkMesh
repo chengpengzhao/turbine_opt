@@ -8,9 +8,9 @@
 Build  : dev-7cd43ea5f827
 Exec   : checkMesh
 Date   : Dec 24 2019
-Time   : 19:35:28
+Time   : 23:31:03
 Host   : "chengpeng-zhao"
-PID    : 26204
+PID    : 32536
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbineRegionMesh
 nProcs : 1
@@ -83,19 +83,19 @@ Checking patch topology for multiply connected surfaces...
     defaultFaces        365200   367236   ok (non-closed singly connected)  
 
 Checking geometry...
-    Overall domain bounding box (-0.0399999 -0.04 0) (0.04 0.0399995 0.001)
+    Overall domain bounding box (-0.03999993164 -0.03999999779 0) (0.03999999915 0.0399995065 0.001)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (7.08579e-18 -2.08973e-18 -1.75266e-16) OK.
-    Max cell openness = 1.54753e-15 OK.
-    Max aspect ratio = 42.9846 OK.
-    Minimum face area = 1.22755e-10. Maximum face area = 1.45342e-06.  Face area magnitudes OK.
-    Min volume = 1.22755e-13. Max volume = 3.72861e-10.  Total volume = 4.86961e-06.  Cell volumes OK.
-    Mesh non-orthogonality Max: 68.1883 average: 19.8511
+    Boundary openness (3.795959679e-19 6.078753301e-19 5.045418233e-17) OK.
+    Max cell openness = 1.498397524e-15 OK.
+    Max aspect ratio = 42.92626186 OK.
+    Minimum face area = 1.231226197e-10. Maximum face area = 1.453321804e-06.  Face area magnitudes OK.
+    Min volume = 1.231226197e-13. Max volume = 3.728371001e-10.  Total volume = 4.869612846e-06.  Cell volumes OK.
+    Mesh non-orthogonality Max: 68.17801733 average: 19.85093457
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 2.22131 OK.
+    Max skewness = 2.221293378 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.

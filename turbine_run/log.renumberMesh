@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : renumberMesh -overwrite
+Date   : Dec 24 2019
+Time   : 23:31:13
+Host   : "chengpeng-zhao"
+PID    : 32556
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 197600
+Before renumbering :
+    band           : 624
+    profile        : 89461978
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+
+After renumbering :
+    band           : 624
+    profile        : 89461978
+
+Writing mesh to "constant"
+
+Renumbering cellSets:
+    rotation
+End
+

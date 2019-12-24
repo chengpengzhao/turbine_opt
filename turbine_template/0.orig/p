@@ -16,112 +16,47 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField      uniform 1e5;
+internalField      uniform 0;
 
 boundaryField
 {
-
-    inlet-l
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    airfoil-l1
+    blade1
     {
         type            zeroGradient;
     }
-    empty-1
-    {
-        type            empty;
-    }
-    empty-2
-    {
-        type            empty;
-    }
-    wall-l1
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    airfoil-l2
+    blade2
     {
         type            zeroGradient;
     }
-    empty-3
-    {
-        type            empty;
-    }
-    empty-4
-    {
-        type            empty;
-    }
-    wall-l2
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    outlet-l
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    empty-5
-    {
-        type            empty;
-    }
-    empty-6
-    {
-        type            empty;
-    }
-    outlet-h
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    wall-h2
-    {
-        type            freestreamPressure;
-        freestreamValue $internalField;
-    }
-    empty-7
-    {
-        type            empty;
-    }
-    empty-8
-    {
-        type            empty;
-    }
-    airfoil-h2
+    blade3
     {
         type            zeroGradient;
     }
-    wall-h1
+    AMI_in
+    {
+        type            cyclicAMI;
+        value   	$internalField;
+    }
+    AMI_out
+    {
+        type            cyclicAMI;
+        value   	$internalField;
+    }
+    inlet
     {
         type            freestreamPressure;
         freestreamValue $internalField;
     }
-    empty-9
-    {
-        type            empty;
-    }
-    empty-10
-    {
-        type            empty;
-    }
-    inlet-h
+    outlet
     {
         type            freestreamPressure;
         freestreamValue $internalField;
     }
-    airfoil-h1
+    walls
     {
         type            zeroGradient;
     }
-    empty-11
-    {
-        type            empty;
-    }
-    empty-12
+    defaultFaces
     {
         type            empty;
     }

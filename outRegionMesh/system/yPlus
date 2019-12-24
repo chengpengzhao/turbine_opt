@@ -10,19 +10,27 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
-yPlus
+yPlusblade1
 {
     type            yPlus;
     libs            ("libfieldFunctionObjects.so");
-
     executeControl  writeTime;
     writeControl    writeTime;
-
-    patches         (airfoil-l1 airfoil-l2 airfoil-h1 airfoil-h2);
-    binData
-        {
-            nBin        21;
-            direction   (1 0 0);
-            cumulative  yes;
-        }
+    patches         (blade1);
+}
+yPlusblade2
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    executeControl  writeTime;
+    writeControl    writeTime;
+    patches         (blade2);
+}
+yPlusblade3
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    executeControl  writeTime;
+    writeControl    writeTime;
+    patches         (blade3);
 }

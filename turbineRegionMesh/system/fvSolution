@@ -20,9 +20,15 @@ solvers
     p
     {
         solver          GAMG;
-        tolerance       1e-03;
+        tolerance       1e-04;
         relTol          0.01;
         smoother        GaussSeidel;
+    }
+    pFinal
+    {
+        $p;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
     }
 
     U
@@ -30,29 +36,45 @@ solvers
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-03;
+        tolerance       1e-04;
         relTol          0.01;
     }
-
+    UFinal
+    {
+        $U;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
+    }
     nuTilda
     {
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-03;
+        tolerance       1e-04;
         relTol          0.01;
+    }
+    nuTildaFinal
+    {
+        $nuTilda;
+        tolerance       1e-5; // 1e-6
+        relTol          0; 
     }
 }
 
-SIMPLE
+PIMPLE
 {
-    nNonOrthogonalCorrectors 0;
+    correctPhi          no;
+    nOuterCorrectors    10; 
+    nCorrectors         2; 
+    nNonOrthogonalCorrectors 1; 
+    pRefCell            0;
+    pRefValue           0;
 
     residualControl
     {
-        p               1e-4;
-        U               1e-4;
-        nuTilda         1e-4;
+        p               1e-3;
+        U               1e-3;
+        nuTilda         1e-3;
     }
 }
 
@@ -60,7 +82,7 @@ relaxationFactors
 {
     fields
     {
-        p               0.3;
+        p               0.7;
     }
     equations
     {
@@ -69,5 +91,9 @@ relaxationFactors
     }
 }
 
+cache
+{
+    grad(U);
+}
 
 // ************************************************************************* //

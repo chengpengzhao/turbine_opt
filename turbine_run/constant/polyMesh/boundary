@@ -1,0 +1,91 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    defaultFaces
+    {
+        type            empty;
+        inGroups        List<word> 1(empty);
+        nFaces          395200;
+        startFace       393880;
+    }
+    blade1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          340;
+        startFace       789080;
+    }
+    blade2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          340;
+        startFace       789420;
+    }
+    blade3
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          340;
+        startFace       789760;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          50;
+        startFace       790100;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          50;
+        startFace       790150;
+    }
+    walls
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          300;
+        startFace       790200;
+    }
+    AMI_out
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          200;
+        startFace       790500;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI_in;
+        method          faceAreaWeightAMI;
+    }
+    AMI_in
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          1020;
+        startFace       790700;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI_out;
+        method          faceAreaWeightAMI;
+    }
+)
+
+// ************************************************************************* //

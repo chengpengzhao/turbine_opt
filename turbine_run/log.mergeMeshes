@@ -1,0 +1,133 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : mergeMeshes . ../outRegionMesh -overwrite
+Date   : Dec 24 2019
+Time   : 23:31:11
+Host   : "chengpeng-zhao"
+PID    : 32553
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Master:      "/opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run"  region region0
+mesh to add: "../outRegionMesh"  region region0
+
+Create Times
+Reading master mesh for time = 0
+Create mesh
+
+Reading mesh to add for time = 0
+Create mesh
+
+Writing combined mesh to 0
+patch names: 
+9
+(
+defaultFaces
+blade1
+blade2
+blade3
+interface_in
+inlet
+outlet
+walls
+interface_out
+)
+
+patch dicts: 
+9
+(
+
+{
+    type            empty;
+    inGroups        List<word> 1(empty);
+    nFaces          365200;
+    startFace       364180;
+}
+
+
+{
+    type            wall;
+    inGroups        List<word> 1(wall);
+    nFaces          340;
+    startFace       729380;
+}
+
+
+{
+    type            wall;
+    inGroups        List<word> 1(wall);
+    nFaces          340;
+    startFace       729720;
+}
+
+
+{
+    type            wall;
+    inGroups        List<word> 1(wall);
+    nFaces          340;
+    startFace       730060;
+}
+
+
+{
+    type            patch;
+    nFaces          1020;
+    startFace       730400;
+}
+
+
+{
+    type            patch;
+    nFaces          50;
+    startFace       29700;
+}
+
+
+{
+    type            patch;
+    nFaces          50;
+    startFace       29750;
+}
+
+
+{
+    type            wall;
+    inGroups        List<word> 1(wall);
+    nFaces          300;
+    startFace       59800;
+}
+
+
+{
+    type            patch;
+    nFaces          200;
+    startFace       60100;
+}
+
+)
+
+point zone names: 0()
+face zone names: 0()
+cell zone names: 
+2
+(
+rotation
+stationary
+)
+
+Copying old patches
+Adding new patches. 
+Adding new cellZones. 
+End
+

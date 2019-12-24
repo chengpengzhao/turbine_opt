@@ -1,0 +1,51 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+Description
+		Don't need.
+
+\*---------------------------------------------------------------------------*/
+
+forcesBlade1
+{
+
+    type            forces;
+    libs            ("libforces.so");
+    patches         (blade1);
+    outputControl timeStep;
+    outputInterval 1;
+    rho     rhoInf;
+    log         true;
+    rhoInf      1e3;
+    CofR (0 0 0);
+}
+forcesBlade2
+{
+
+    type            forces;
+    libs            ("libforces.so");
+    patches         (blade2);
+    outputControl timeStep;
+    outputInterval 1;
+    rho     rhoInf;
+    log         true;
+    rhoInf      1e3;
+    CofR (0 0 0);
+}
+forcesBlade3
+{
+
+    type            forces;
+    libs            ("libforces.so");
+    patches         (blade3);
+    outputControl timeStep;
+    outputInterval 1;
+    rho     rhoInf;
+    log         true;
+    rhoInf      1e3;
+    CofR (0 0 0);
+}

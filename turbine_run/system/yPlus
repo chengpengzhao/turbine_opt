@@ -1,0 +1,36 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+Description
+    Calculates y+
+
+\*---------------------------------------------------------------------------*/
+
+yPlusblade1
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    executeControl  writeTime;
+    writeControl    writeTime;
+    patches         (blade1);
+}
+yPlusblade2
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    executeControl  writeTime;
+    writeControl    writeTime;
+    patches         (blade2);
+}
+yPlusblade3
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    executeControl  writeTime;
+    writeControl    writeTime;
+    patches         (blade3);
+}
