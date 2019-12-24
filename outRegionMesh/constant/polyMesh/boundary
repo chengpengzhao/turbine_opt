@@ -1,0 +1,107 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+13
+(
+    inlet
+    {
+        type            patch;
+        nFaces          50;
+        startFace       29700;
+    }
+    wall-l1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       29750;
+    }
+    wall-h1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       29800;
+    }
+    wall-l2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       29850;
+    }
+    wall-h2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       29900;
+    }
+    wall-l3
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       29950;
+    }
+    wall-h3
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          50;
+        startFace       30000;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          50;
+        startFace       30050;
+    }
+    interface-1
+    {
+        type            patch;
+        nFaces          50;
+        startFace       30100;
+    }
+    interface-2
+    {
+        type            patch;
+        nFaces          50;
+        startFace       30150;
+    }
+    interface-3
+    {
+        type            patch;
+        nFaces          50;
+        startFace       30200;
+    }
+    interface-4
+    {
+        type            patch;
+        nFaces          50;
+        startFace       30250;
+    }
+    defaultFaces
+    {
+        type            empty;
+        inGroups        List<word> 1(empty);
+        nFaces          30000;
+        startFace       30300;
+    }
+)
+
+// ************************************************************************* //

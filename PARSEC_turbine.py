@@ -103,7 +103,7 @@ lowery = ChordL * lowery;
 # plt.gca().axis('equal')
 # plt.show()
 # ========================================================================================
-# calculate coordinates
+# mesh parameters
 Rregion = 4
 Rairfoil = 3.414
 Rinner = 2.4
@@ -112,6 +112,23 @@ beta = 15 * pi / 180  # pitch angle
 theta = 120 * pi / 180
 length_z = 0.1
 RendTostart = 1.2 * Rregion
+leadregionNumber = round(0.25 / 1 * len(x))
+
+# mesh parameters
+FCells = 70
+DCells = 100
+CCells = 70
+UpCells = 70
+DGrading = 10
+UpGrading = 10
+LeadGrading = 10
+CGrading = 3
+# ofblockmeshdicthelper doesn't support for this format
+# ( length% cells% expansion )
+FGrading = '((0.3 0.4 5)(0.4 0.2 1)(0.3 0.4 0.2))'  # (10*0.1=1) must be 1
+
+# ========================================================================================
+# calculate coordinates
 
 # translation
 [blade1upperx, blade1uppery] = [x - 0.25 * ChordL, uppery]
@@ -180,7 +197,7 @@ Gamma = atan((y13 - y6) / (x13 - x6))
 [x22, y22] = [xSquare[4], ySquare[4]]
 [x23, y23] = [xSquare[5], ySquare[5]]
 
-leadregionNumber = round(0.06 / 1 * len(x))
+
 [x5a, y5a] = [blade1lowerx[leadregionNumber], blade1lowery[leadregionNumber]]
 [x5b, y5b] = [blade1upperx[leadregionNumber], blade1uppery[leadregionNumber]]
 [x11a, y11a] = [blade2lowerx[leadregionNumber], blade2lowery[leadregionNumber]]
@@ -464,18 +481,6 @@ def vnamegen(x0z0, x1z0, x1z1, x0z1):
             x0z0 + '+z', x1z0 + '+z', x1z1 + '+z', x0z1 + '+z')
 
 
-# mesh parameters
-FCells = 100
-DCells = 60
-CCells = 50
-UpCells = 60
-DGrading = 10
-UpGrading = 10
-LeadGrading = 10
-CGrading = 3
-# ofblockmeshdicthelper doesn't support for this format
-# ( length% cells% expansion )
-FGrading = '((0.3 0.4 10)(0.4 0.2 1)(0.3 0.4 0.1))'  # must be 1  (10*0.1=1)
 
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==
 # create blocks
@@ -570,10 +575,6 @@ bmd.add_boundary('patch', 'AMIin-blade3-2', [b17b.face('yp')])
 bmd.add_boundary('patch', 'AMIin-blade3-3', [b9.face('yp')])
 bmd.add_boundary('patch', 'AMIin-blade3-4', [b11.face('yp')])
 
-
-
-bmd.add_boundary('empty', 'empty-1', [b0.face('zm')])
-bmd.add_boundary('empty', 'empty-2', [b0.face('zp')])
 
 
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==

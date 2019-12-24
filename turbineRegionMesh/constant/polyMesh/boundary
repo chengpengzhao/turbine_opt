@@ -1,0 +1,185 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+25
+(
+    blade1-l2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364180;
+    }
+    blade1-h2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364250;
+    }
+    blade1-l1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       364320;
+    }
+    blade1-h1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       364420;
+    }
+    blade2-l2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364520;
+    }
+    blade2-h2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364590;
+    }
+    blade2-l1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       364660;
+    }
+    blade2-h1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       364760;
+    }
+    blade3-l2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364860;
+    }
+    blade3-h2
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          70;
+        startFace       364930;
+    }
+    blade3-l1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       365000;
+    }
+    blade3-h1
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          100;
+        startFace       365100;
+    }
+    AMIin-blade1-1
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365200;
+    }
+    AMIin-blade1-2
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365300;
+    }
+    AMIin-blade1-3
+    {
+        type            patch;
+        nFaces          70;
+        startFace       365400;
+    }
+    AMIin-blade1-4
+    {
+        type            patch;
+        nFaces          70;
+        startFace       365470;
+    }
+    AMIin-blade2-1
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365540;
+    }
+    AMIin-blade2-2
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365640;
+    }
+    AMIin-blade2-3
+    {
+        type            patch;
+        nFaces          70;
+        startFace       365740;
+    }
+    AMIin-blade2-4
+    {
+        type            patch;
+        nFaces          70;
+        startFace       365810;
+    }
+    AMIin-blade3-1
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365880;
+    }
+    AMIin-blade3-2
+    {
+        type            patch;
+        nFaces          100;
+        startFace       365980;
+    }
+    AMIin-blade3-3
+    {
+        type            patch;
+        nFaces          70;
+        startFace       366080;
+    }
+    AMIin-blade3-4
+    {
+        type            patch;
+        nFaces          70;
+        startFace       366150;
+    }
+    defaultFaces
+    {
+        type            empty;
+        inGroups        List<word> 1(empty);
+        nFaces          365200;
+        startFace       366220;
+    }
+)
+
+// ************************************************************************* //

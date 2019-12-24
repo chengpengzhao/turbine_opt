@@ -1,0 +1,173 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.01;
+
+vertices
+(
+    (               -100              -13.5                  0 )  // 0 v0-z
+    (              -13.5              -13.5                  0 )  // 1 v1-z
+    (               13.5              -13.5                  0 )  // 2 v2-z
+    (                100              -13.5                  0 )  // 3 v3-z
+    (  -2.82842712474619  -2.82842712474619                  0 )  // 4 v8-z
+    (   2.82842712474619  -2.82842712474619                  0 )  // 5 v9-z
+    (  -2.82842712474619   2.82842712474619                  0 )  // 6 v11-z
+    (   2.82842712474619   2.82842712474619                  0 )  // 7 v10-z
+    (               -100               13.5                  0 )  // 8 v7-z
+    (              -13.5               13.5                  0 )  // 9 v6-z
+    (               13.5               13.5                  0 )  // 10 v5-z
+    (                100               13.5                  0 )  // 11 v4-z
+    (               -100              -13.5                0.1 )  // 12 v0+z
+    (              -13.5              -13.5                0.1 )  // 13 v1+z
+    (               13.5              -13.5                0.1 )  // 14 v2+z
+    (                100              -13.5                0.1 )  // 15 v3+z
+    (  -2.82842712474619  -2.82842712474619                0.1 )  // 16 v8+z
+    (   2.82842712474619  -2.82842712474619                0.1 )  // 17 v9+z
+    (  -2.82842712474619   2.82842712474619                0.1 )  // 18 v11+z
+    (   2.82842712474619   2.82842712474619                0.1 )  // 19 v10+z
+    (               -100               13.5                0.1 )  // 20 v7+z
+    (              -13.5               13.5                0.1 )  // 21 v6+z
+    (               13.5               13.5                0.1 )  // 22 v5+z
+    (                100               13.5                0.1 )  // 23 v4+z
+);
+
+edges
+(
+  arc 18 19 (                 0                  4                0.1) // arc-1+z (v11+z v10+z)
+  arc 18 16 (                -4                  0                0.1) // arc-4+z (v11+z v8+z)
+  arc 17 19 (                 4                  0                0.1) // arc-2+z (v9+z v10+z)
+  arc 16 17 (                 0                 -4                0.1) // arc-3+z (v8+z v9+z)
+  arc 6 7 (                 0                  4                  0) // arc-1-z (v11-z v10-z)
+  arc 6 4 (                -4                  0                  0) // arc-4-z (v11-z v8-z)
+  arc 5 7 (                 4                  0                  0) // arc-2-z (v9-z v10-z)
+  arc 4 5 (                 0                 -4                  0) // arc-3-z (v8-z v9-z)
+);
+
+blocks
+(
+    hex (0 1 9 8 12 13 21 20) b0 (50 50 1) simpleGrading (0.2 1 1)  // b0 (v0-z v1-z v6-z v7-z v0+z v1+z v6+z v7+z)
+    hex (2 3 11 10 14 15 23 22) b5 (50 50 1) simpleGrading (5 1 1)  // b5 (v2-z v3-z v4-z v5-z v2+z v3+z v4+z v5+z)
+    hex (1 2 5 4 13 14 17 16) b4 (50 50 1) simpleGrading (1 0.1 1)  // b4 (v1-z v2-z v9-z v8-z v1+z v2+z v9+z v8+z)
+    hex (2 10 7 5 14 22 19 17) b3 (50 50 1) simpleGrading (1 0.1 1)  // b3 (v2-z v5-z v10-z v9-z v2+z v5+z v10+z v9+z)
+    hex (10 9 6 7 22 21 18 19) b2 (50 50 1) simpleGrading (1 0.1 1)  // b2 (v5-z v6-z v11-z v10-z v5+z v6+z v11+z v10+z)
+    hex (9 1 4 6 21 13 16 18) b1 (50 50 1) simpleGrading (1 0.1 1)  // b1 (v6-z v1-z v8-z v11-z v6+z v1+z v8+z v11+z)
+);
+
+boundary
+(
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 12 20 8)  // f-b0-w (v0-z v0+z v7+z v7-z)
+        );
+    }
+    wall-l1
+    {
+        type wall;
+        faces
+        (
+            (9 8 20 21)  // f-b0-n (v6-z v7-z v7+z v6+z)
+        );
+    }
+    wall-h1
+    {
+        type wall;
+        faces
+        (
+            (0 1 13 12)  // f-b0-s (v0-z v1-z v1+z v0+z)
+        );
+    }
+    wall-l2
+    {
+        type wall;
+        faces
+        (
+            (10 9 21 22)  // f-b2-s (v5-z v6-z v6+z v5+z)
+        );
+    }
+    wall-h2
+    {
+        type wall;
+        faces
+        (
+            (1 2 14 13)  // f-b4-s (v1-z v2-z v2+z v1+z)
+        );
+    }
+    wall-l3
+    {
+        type wall;
+        faces
+        (
+            (11 10 22 23)  // f-b5-n (v4-z v5-z v5+z v4+z)
+        );
+    }
+    wall-h3
+    {
+        type wall;
+        faces
+        (
+            (2 3 15 14)  // f-b5-s (v2-z v3-z v3+z v2+z)
+        );
+    }
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (3 11 23 15)  // f-b5-n (v3-z v4-z v4+z v3+z)
+        );
+    }
+    interface-1
+    {
+        type patch;
+        faces
+        (
+            (5 4 16 17)  // f-b4-n (v9-z v8-z v8+z v9+z)
+        );
+    }
+    interface-2
+    {
+        type patch;
+        faces
+        (
+            (7 5 17 19)  // f-b3-n (v10-z v9-z v9+z v10+z)
+        );
+    }
+    interface-3
+    {
+        type patch;
+        faces
+        (
+            (6 7 19 18)  // f-b2-n (v11-z v10-z v10+z v11+z)
+        );
+    }
+    interface-4
+    {
+        type patch;
+        faces
+        (
+            (4 6 18 16)  // f-b1-n (v8-z v11-z v11+z v8+z)
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

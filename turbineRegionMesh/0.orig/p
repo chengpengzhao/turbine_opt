@@ -1,0 +1,130 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField      uniform 1e5;
+
+boundaryField
+{
+
+    inlet-l
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    airfoil-l1
+    {
+        type            zeroGradient;
+    }
+    empty-1
+    {
+        type            empty;
+    }
+    empty-2
+    {
+        type            empty;
+    }
+    wall-l1
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    airfoil-l2
+    {
+        type            zeroGradient;
+    }
+    empty-3
+    {
+        type            empty;
+    }
+    empty-4
+    {
+        type            empty;
+    }
+    wall-l2
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    outlet-l
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    empty-5
+    {
+        type            empty;
+    }
+    empty-6
+    {
+        type            empty;
+    }
+    outlet-h
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    wall-h2
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    empty-7
+    {
+        type            empty;
+    }
+    empty-8
+    {
+        type            empty;
+    }
+    airfoil-h2
+    {
+        type            zeroGradient;
+    }
+    wall-h1
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    empty-9
+    {
+        type            empty;
+    }
+    empty-10
+    {
+        type            empty;
+    }
+    inlet-h
+    {
+        type            freestreamPressure;
+        freestreamValue $internalField;
+    }
+    airfoil-h1
+    {
+        type            zeroGradient;
+    }
+    empty-11
+    {
+        type            empty;
+    }
+    empty-12
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //

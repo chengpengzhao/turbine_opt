@@ -1,0 +1,113 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : blockMesh
+Date   : Dec 24 2019
+Time   : 15:12:20
+Host   : "chengpeng-zhao"
+PID    : 18328
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, Foam::pointField&&, const cellShapeList&, const faceListList&, const wordList&, const Foam::PtrList<Foam::dictionary>&, const Foam::word&, const Foam::word&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 873
+    Found 12 undefined faces in mesh; adding to default patch.
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 6
+		Number of boundary faces : 24
+		Number of defined boundary faces : 24
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.01
+    Block 0 cell size :
+        i : 0.0346575 .. 0.0069315
+        j : 0.0054
+        k : 0.001
+    Block 1 cell size :
+        i : 0.0069315 .. 0.0346575
+        j : 0.0054
+        k : 0.001
+    Block 2 cell size :
+        i : 0.0054 0.00517195 0.0054 0.00517195 
+        j : 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 
+        k : 0.001
+    Block 3 cell size :
+        i : 0.0054 0.00517195 0.0054 0.00517195 
+        j : 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 
+        k : 0.001
+    Block 4 cell size :
+        i : 0.0054 0.00517195 0.0054 0.00517195 
+        j : 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 
+        k : 0.001
+    Block 5 cell size :
+        i : 0.0054 0.00517195 0.0054 0.00517195 
+        j : 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 0.00765856 .. 0.000765856 0.00746692 .. 0.000746692 
+        k : 0.001
+
+Adding cell zones
+    0	b0
+    1	b5
+    2	b4
+    3	b3
+    4	b2
+    5	b1
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-1 -0.135 0) (1 0.135 0.001)
+  nPoints: 30600
+  nCells: 15000
+  nFaces: 60300
+  nInternalFaces: 29700
+----------------
+Patches
+----------------
+  patch 0 (start: 29700 size: 50) name: inlet
+  patch 1 (start: 29750 size: 50) name: wall-l1
+  patch 2 (start: 29800 size: 50) name: wall-h1
+  patch 3 (start: 29850 size: 50) name: wall-l2
+  patch 4 (start: 29900 size: 50) name: wall-h2
+  patch 5 (start: 29950 size: 50) name: wall-l3
+  patch 6 (start: 30000 size: 50) name: wall-h3
+  patch 7 (start: 30050 size: 50) name: outlet
+  patch 8 (start: 30100 size: 50) name: interface-1
+  patch 9 (start: 30150 size: 50) name: interface-2
+  patch 10 (start: 30200 size: 50) name: interface-3
+  patch 11 (start: 30250 size: 50) name: interface-4
+  patch 12 (start: 30300 size: 30000) name: defaultFaces
+
+End
+
