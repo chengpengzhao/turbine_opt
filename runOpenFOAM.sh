@@ -25,6 +25,8 @@ cd outRegionMesh;
 blockMesh > log.blockMesh;
 renumberMesh -overwrite >log.renumberMesh;
 checkMesh > log.checkMesh;
+mv system/outRegion_createPatchDict system/createPatchDict;
+createPatch -overwrite > log.createPatch;
 echo "outRegion mesh, accomplished..."
 paraFoam &
 cd ..;
@@ -32,6 +34,8 @@ cd turbineRegionMesh;
 blockMesh > log.blockMesh;
 renumberMesh -overwrite >log.renumberMesh;
 checkMesh > log.checkMesh;
+mv system/turbineRegion_createPatchDict system/createPatchDict;
+createPatch -overwrite > log.createPatch;
 echo "turbineRegionMesh, accomplished..."
 #caseName="turbine_run";
 #runpath="./${caseName}";

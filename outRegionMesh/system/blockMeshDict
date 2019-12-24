@@ -78,7 +78,7 @@ boundary
     }
     wall-l1
     {
-        type wall;
+        type patch;
         faces
         (
             (9 8 20 21)  // f-b0-n (v6-z v7-z v7+z v6+z)
@@ -86,7 +86,7 @@ boundary
     }
     wall-h1
     {
-        type wall;
+        type patch;
         faces
         (
             (0 1 13 12)  // f-b0-s (v0-z v1-z v1+z v0+z)
@@ -94,7 +94,7 @@ boundary
     }
     wall-l2
     {
-        type wall;
+        type patch;
         faces
         (
             (10 9 21 22)  // f-b2-s (v5-z v6-z v6+z v5+z)
@@ -102,7 +102,7 @@ boundary
     }
     wall-h2
     {
-        type wall;
+        type patch;
         faces
         (
             (1 2 14 13)  // f-b4-s (v1-z v2-z v2+z v1+z)
@@ -110,7 +110,7 @@ boundary
     }
     wall-l3
     {
-        type wall;
+        type patch;
         faces
         (
             (11 10 22 23)  // f-b5-n (v4-z v5-z v5+z v4+z)
@@ -118,7 +118,7 @@ boundary
     }
     wall-h3
     {
-        type wall;
+        type patch;
         faces
         (
             (2 3 15 14)  // f-b5-s (v2-z v3-z v3+z v2+z)

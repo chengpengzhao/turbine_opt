@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : createPatch -overwrite
+Date   : Dec 24 2019
+Time   : 16:19:06
+Host   : "chengpeng-zhao"
+PID    : 25197
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading createPatchDict
+
+Adding new patch walls as patch 13 from 
+{
+    type            wall;
+}
+
+Adding new patch interface_out as patch 14 from 
+{
+    type            patch;
+}
+
+
+Moving faces from patch wall-l1 to patch 13
+Moving faces from patch wall-h1 to patch 13
+Moving faces from patch wall-l2 to patch 13
+Moving faces from patch wall-h2 to patch 13
+Moving faces from patch wall-l3 to patch 13
+Moving faces from patch wall-h3 to patch 13
+Moving faces from patch interface-1 to patch 14
+Moving faces from patch interface-2 to patch 14
+Moving faces from patch interface-3 to patch 14
+Moving faces from patch interface-4 to patch 14
+
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removing zero-sized patch wall-l1 type patch at position 1
+Removing zero-sized patch wall-h1 type patch at position 2
+Removing zero-sized patch wall-l2 type patch at position 3
+Removing zero-sized patch wall-h2 type patch at position 4
+Removing zero-sized patch wall-l3 type patch at position 5
+Removing zero-sized patch wall-h3 type patch at position 6
+Removing zero-sized patch interface-1 type patch at position 8
+Removing zero-sized patch interface-2 type patch at position 9
+Removing zero-sized patch interface-3 type patch at position 10
+Removing zero-sized patch interface-4 type patch at position 11
+Removing patches.
+Writing repatched mesh to 0
+
+End
+

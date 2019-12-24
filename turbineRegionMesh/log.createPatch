@@ -1,0 +1,108 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : createPatch -overwrite
+Date   : Dec 24 2019
+Time   : 16:19:14
+Host   : "chengpeng-zhao"
+PID    : 25224
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbineRegionMesh
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading createPatchDict
+
+Adding new patch blade1 as patch 25 from 
+{
+    type            wall;
+}
+
+Adding new patch blade2 as patch 26 from 
+{
+    type            wall;
+}
+
+Adding new patch blade3 as patch 27 from 
+{
+    type            wall;
+}
+
+Adding new patch interface_in as patch 28 from 
+{
+    type            patch;
+}
+
+
+Moving faces from patch blade1-l2 to patch 25
+Moving faces from patch blade1-h2 to patch 25
+Moving faces from patch blade1-l1 to patch 25
+Moving faces from patch blade1-h1 to patch 25
+Moving faces from patch blade2-l2 to patch 26
+Moving faces from patch blade2-h2 to patch 26
+Moving faces from patch blade2-l1 to patch 26
+Moving faces from patch blade2-h1 to patch 26
+Moving faces from patch blade3-l2 to patch 27
+Moving faces from patch blade3-h2 to patch 27
+Moving faces from patch blade3-l1 to patch 27
+Moving faces from patch blade3-h1 to patch 27
+Moving faces from patch AMIin-blade1-1 to patch 28
+Moving faces from patch AMIin-blade1-2 to patch 28
+Moving faces from patch AMIin-blade1-3 to patch 28
+Moving faces from patch AMIin-blade1-4 to patch 28
+Moving faces from patch AMIin-blade2-1 to patch 28
+Moving faces from patch AMIin-blade2-2 to patch 28
+Moving faces from patch AMIin-blade2-3 to patch 28
+Moving faces from patch AMIin-blade2-4 to patch 28
+Moving faces from patch AMIin-blade3-1 to patch 28
+Moving faces from patch AMIin-blade3-2 to patch 28
+Moving faces from patch AMIin-blade3-3 to patch 28
+Moving faces from patch AMIin-blade3-4 to patch 28
+
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removing zero-sized patch blade1-l2 type wall at position 0
+Removing zero-sized patch blade1-h2 type wall at position 1
+Removing zero-sized patch blade1-l1 type wall at position 2
+Removing zero-sized patch blade1-h1 type wall at position 3
+Removing zero-sized patch blade2-l2 type wall at position 4
+Removing zero-sized patch blade2-h2 type wall at position 5
+Removing zero-sized patch blade2-l1 type wall at position 6
+Removing zero-sized patch blade2-h1 type wall at position 7
+Removing zero-sized patch blade3-l2 type wall at position 8
+Removing zero-sized patch blade3-h2 type wall at position 9
+Removing zero-sized patch blade3-l1 type wall at position 10
+Removing zero-sized patch blade3-h1 type wall at position 11
+Removing zero-sized patch AMIin-blade1-1 type patch at position 12
+Removing zero-sized patch AMIin-blade1-2 type patch at position 13
+Removing zero-sized patch AMIin-blade1-3 type patch at position 14
+Removing zero-sized patch AMIin-blade1-4 type patch at position 15
+Removing zero-sized patch AMIin-blade2-1 type patch at position 16
+Removing zero-sized patch AMIin-blade2-2 type patch at position 17
+Removing zero-sized patch AMIin-blade2-3 type patch at position 18
+Removing zero-sized patch AMIin-blade2-4 type patch at position 19
+Removing zero-sized patch AMIin-blade3-1 type patch at position 20
+Removing zero-sized patch AMIin-blade3-2 type patch at position 21
+Removing zero-sized patch AMIin-blade3-3 type patch at position 22
+Removing zero-sized patch AMIin-blade3-4 type patch at position 23
+Removing patches.
+Writing repatched mesh to 0
+
+End
+

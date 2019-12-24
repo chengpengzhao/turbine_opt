@@ -102,12 +102,12 @@ b1 = bmd.add_hexblock(vnamegen('v6', 'v1', 'v8', 'v11'), (CellsV, CellsV, 1), 'b
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==
 # boundary
 bmd.add_boundary('patch', 'inlet', [b0.face('xm')])
-bmd.add_boundary('wall', 'wall-l1', [b0.face('yp')])
-bmd.add_boundary('wall', 'wall-h1', [b0.face('ym')])
-bmd.add_boundary('wall', 'wall-l2', [b2.face('ym')])
-bmd.add_boundary('wall', 'wall-h2', [b4.face('ym')])
-bmd.add_boundary('wall', 'wall-l3', [b5.face('yp')])
-bmd.add_boundary('wall', 'wall-h3', [b5.face('ym')])
+bmd.add_boundary('patch', 'wall-l1', [b0.face('yp')])
+bmd.add_boundary('patch', 'wall-h1', [b0.face('ym')])
+bmd.add_boundary('patch', 'wall-l2', [b2.face('ym')])
+bmd.add_boundary('patch', 'wall-h2', [b4.face('ym')])
+bmd.add_boundary('patch', 'wall-l3', [b5.face('yp')])
+bmd.add_boundary('patch', 'wall-h3', [b5.face('ym')])
 bmd.add_boundary('patch', 'outlet', [b5.face('xp')])
 
 bmd.add_boundary('patch', 'interface-1', [b4.face('yp')])
