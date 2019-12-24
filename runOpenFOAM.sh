@@ -27,6 +27,8 @@ renumberMesh -overwrite >log.renumberMesh;
 checkMesh > log.checkMesh;
 mv system/outRegion_createPatchDict system/createPatchDict;
 createPatch -overwrite > log.createPatch;
+mv system/outRegion_topoSetDict system/topoSetDict;
+topoSet > log.topoSet;
 echo "outRegion mesh, accomplished..."
 paraFoam &
 cd ..;
@@ -36,6 +38,8 @@ renumberMesh -overwrite >log.renumberMesh;
 checkMesh > log.checkMesh;
 mv system/turbineRegion_createPatchDict system/createPatchDict;
 createPatch -overwrite > log.createPatch;
+mv system/turbineRegion_topoSetDict system/topoSetDict;
+topoSet > log.topoSet;
 echo "turbineRegionMesh, accomplished..."
 #caseName="turbine_run";
 #runpath="./${caseName}";

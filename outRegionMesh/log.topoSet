@@ -6,11 +6,11 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 Build  : dev-7cd43ea5f827
-Exec   : renumberMesh -overwrite
+Exec   : topoSet
 Date   : Dec 24 2019
-Time   : 19:35:23
+Time   : 19:35:24
 Host   : "chengpeng-zhao"
-PID    : 26174
+PID    : 26179
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
 nProcs : 1
@@ -21,25 +21,33 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
-Create mesh for time = 0
+Create polyMesh for time = 0
 
-Mesh size: 15000
-Before renumbering :
-    band           : 12500
-    profile        : 2.21054e+06
+Reading topoSetDict
 
-Using default renumberMethod.
-
-Selecting renumberMethod CuthillMcKee
-
-Reading geometric fields
-
-
-After renumbering :
-    band           : 149
-    profile        : 1.50176e+06
-
-Writing mesh to "constant"
-
+Time = 0
+    mesh not changed.
+Created cellZoneSet stationary
+    Applying source zoneToCell
+    Adding all cells of cellZone "b.*" ...
+    Found matching zone b0 with 2500 cells.
+    Found matching zone b5 with 2500 cells.
+    Found matching zone b4 with 2500 cells.
+    Found matching zone b3 with 2500 cells.
+    Found matching zone b2 with 2500 cells.
+    Found matching zone b1 with 2500 cells.
+    cellZoneSet stationary now size 15000
+    Removing set
+Removing zone b0 at index 0
+    Removing set
+Removing zone b1 at index 4
+    Removing set
+Removing zone b2 at index 3
+    Removing set
+Removing zone b3 at index 2
+    Removing set
+Removing zone b4 at index 1
+    Removing set
+Removing zone b5 at index 0
 End
 

@@ -1,0 +1,206 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+actions
+(
+
+
+    // Generate a cellZone
+    {
+        name    rotation;
+        type    cellZoneSet;
+        action  new;
+        source  zoneToCell;
+        sourceInfo
+        {
+           name "b.*";      // Name of cellZone, regular expressions allowed
+        }
+    }
+    {
+        name	b0;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b1;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b2;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b3;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b4;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b5;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b6;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b7;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b8;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b9;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b10;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b11;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b12;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b13;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b14;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b15;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b16;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b17;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b18;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b19;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b5a;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b5b;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b5c;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b11a;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b11b;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b11c;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b17a;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b17b;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+    {
+        name	b17c;
+        type    cellZoneSet;
+        action  remove;
+
+    }
+);
+// ************************************************************************* //

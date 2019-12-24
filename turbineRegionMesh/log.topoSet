@@ -1,0 +1,122 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : topoSet
+Date   : Dec 24 2019
+Time   : 19:35:34
+Host   : "chengpeng-zhao"
+PID    : 26211
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbineRegionMesh
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellZoneSet rotation
+    Applying source zoneToCell
+    Adding all cells of cellZone "b.*" ...
+    Found matching zone b0 with 7000 cells.
+    Found matching zone b1 with 4900 cells.
+    Found matching zone b2 with 7000 cells.
+    Found matching zone b3 with 4900 cells.
+    Found matching zone b4 with 7000 cells.
+    Found matching zone b5 with 4900 cells.
+    Found matching zone b6 with 7000 cells.
+    Found matching zone b7 with 4900 cells.
+    Found matching zone b8 with 7000 cells.
+    Found matching zone b9 with 4900 cells.
+    Found matching zone b10 with 7000 cells.
+    Found matching zone b11 with 4900 cells.
+    Found matching zone b12 with 4900 cells.
+    Found matching zone b13 with 4900 cells.
+    Found matching zone b14 with 4900 cells.
+    Found matching zone b15 with 4900 cells.
+    Found matching zone b16 with 4900 cells.
+    Found matching zone b17 with 4900 cells.
+    Found matching zone b18 with 4900 cells.
+    Found matching zone b19 with 4900 cells.
+    Found matching zone b5a with 10000 cells.
+    Found matching zone b5b with 7000 cells.
+    Found matching zone b5c with 7000 cells.
+    Found matching zone b11a with 10000 cells.
+    Found matching zone b11b with 7000 cells.
+    Found matching zone b11c with 7000 cells.
+    Found matching zone b17a with 10000 cells.
+    Found matching zone b17b with 7000 cells.
+    Found matching zone b17c with 7000 cells.
+    cellZoneSet rotation now size 182600
+    Removing set
+Removing zone b0 at index 0
+    Removing set
+Removing zone b1 at index 0
+    Removing set
+Removing zone b2 at index 0
+    Removing set
+Removing zone b3 at index 0
+    Removing set
+Removing zone b4 at index 0
+    Removing set
+Removing zone b5 at index 0
+    Removing set
+Removing zone b6 at index 0
+    Removing set
+Removing zone b7 at index 0
+    Removing set
+Removing zone b8 at index 0
+    Removing set
+Removing zone b9 at index 0
+    Removing set
+Removing zone b10 at index 0
+    Removing set
+Removing zone b11 at index 0
+    Removing set
+Removing zone b12 at index 0
+    Removing set
+Removing zone b13 at index 0
+    Removing set
+Removing zone b14 at index 0
+    Removing set
+Removing zone b15 at index 0
+    Removing set
+Removing zone b16 at index 0
+    Removing set
+Removing zone b17 at index 0
+    Removing set
+Removing zone b18 at index 0
+    Removing set
+Removing zone b19 at index 0
+    Removing set
+Removing zone b5a at index 0
+    Removing set
+Removing zone b5b at index 0
+    Removing set
+Removing zone b5c at index 0
+    Removing set
+Removing zone b11a at index 0
+    Removing set
+Removing zone b11b at index 0
+    Removing set
+Removing zone b11c at index 0
+    Removing set
+Removing zone b17a at index 0
+    Removing set
+Removing zone b17b at index 0
+    Removing set
+Removing zone b17c at index 0
+End
+
