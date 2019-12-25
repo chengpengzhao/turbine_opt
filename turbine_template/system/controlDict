@@ -24,7 +24,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         1;
+endTime         1.69815819;
 
 deltaT          0.0023586;     // 1deg/step
 

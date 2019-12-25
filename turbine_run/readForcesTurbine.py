@@ -1,43 +1,4 @@
-# Post Processing file for turbine cases.
-# Iván Hernández Alayeto.
-# MSc student.
-# KEIO University & Technical University of Madrid.
-# Contact: ivan.hernandez.alayeto@keio.jp OR ivan.hernandez.alayeto@alumnos.upm.es
 
-import pandas as pd
-import numpy as np
-from pathlib import Path
-from scipy import integrate, interpolate
-from matplotlib import pyplot as plt
-
-header=['Time', 'Force pressure x','Force pressure y','Force pressure z', 'Force viscous x','Force viscous y','Force viscous z','Force porous x','Force porous y','Force porous z', 'Torque pressure x','Torque pressure y','Torque pressure z', 'Torque viscous x','Torque viscous y','Torque viscous z','Torque porous x','Torque porous y','Torque porous z']
-
-def bindAngle(theta):
-    #Bind between 0 and 360
-    while theta>=360.:
-        theta=theta-360.
-    while theta<0:
-        theta=theta+360.
-    return theta
-def asGrad(angle):
-    return angle/(2*np.pi)*360
-def asRad(angle):
-    return angle*(2*np.pi)/360
-def bindRadAngle(angle):
-    #Bind between -pi,pi
-    while angle>np.pi:
-        angle=angle-np.pi*2
-    while angle<-np.pi:
-        angle=angle+np.pi*2
-    return angle
-
-def rotMatx(theta):
-    #Note: the angle must be in degrees
-    theta=asRad(theta)
-    R=np.matrix( [[np.cos(theta), np.sin(theta)],[-np.sin(theta), np.cos(theta)]])
-    return R
-
-def rotateVector(theta,Fx,Fy):
         #Note: theta must be inserted in degrees. Theta=0 corresponds with this
 #        |n           |y
 #        |            |
@@ -46,7 +7,7 @@ def rotateVector(theta,Fx,Fy):
         F_xy=np.matrix([Fx,Fy]).T
         F_tn=rotMatx(theta)*F_xy
         return F_tn[0,0],F_tn[1,0]
-
+k
 class forcesFile:
     #Class containing the forces as a dataframe, the path of the file and the blade to which it belongs
     filePath=Path('Not initialized')
@@ -234,46 +195,6 @@ class bladeForces:
         
         
 class turbineData:
-    #Class that stores the data of each turbine and introduces corrections and non-dimensionalizations to the other two.
-    def getType(self,casePath):
-        if 'Single' in str(casePath.absolute()):
-            self.kind='Single'
-        elif 'Forward' in str(casePath.absolute()):
-            self.kind='Forward'
-        elif 'Backward' in str(casePath.absolute()):
-            self.kind='Backward'
-        else:
-            self.kind='Single'
-        print('Case recognized as '+self.kind)
-
-
-    def getAngleCorrection(self):
-        if self.kind == 'Single':
-            self.position='Centered'
-            self.correctAngle=[0,-120,120]
-            
-        elif self.kind == 'Backward':
-            if self.blades[0].number in [1,2,3]:
-                self.position='Top'
-            else:
-                self.position= 'Bottom'
-            self.correctAngle=[120,0,-120]
-                
-        else:
-            self.kind == 'Forward'
-            self.correctAngle=[120,0,-120]
-            if self.blades[0].number in [1,2,3]:
-                self.position='Bottom'
-            else:
-                self.position= 'Top'
-    def getTorqueFlip(self):
-        if self.kind =='Forward' and self.position=='Bottom':
-            flip=True
-        elif self.kind=='Backward' and self.position=='Top':
-            flip=True
-        else:
-            flip=False
-        return flip
     
     def getRevValues(self):
         #Add the averages of each blade.
@@ -308,93 +229,5 @@ class turbineData:
         self.getRevValues()
         
         
-
-
-#Get all the forces files.
-thisCase=Path('.')
-pathsAllForcesFiles=[x for x in thisCase.glob('**/*forces*.dat')]
-
-allForcesFiles=[]
-for file in pathsAllForcesFiles:
-    allForcesFiles.append(forcesFile(file))
-
-#Search all the blades:
-allBlades=np.unique([x.blade for x in allForcesFiles ])
-blades=[]
-
-#Create array with dataFrames for each blade.
-for i in allBlades:
-    blades.append(bladeForces(i,allForcesFiles))
-    
-blades=np.array(blades)
-
-#This is temporal for 1T case
-turbines=[]
-turbines.append(turbineData(blades[0:3]))
-if len(blades)>3:
-    turbines.append(turbineData(blades[3:6]))
-#################################################################
-############### End of the calculations #########################
-#################################################################
-
-#Create a few plots from the first turbine.
-
-#Plot of the Cp variation with revolutions for each blade.
-tb=turbines[0]
-plt.figure(0)
-plt.xlabel('t*')
-plt.ylabel('Cp')
-plt.title('Power coefficient each blade in '+tb.kind+' configuration')
-clr=['#797ebd','#00afce','#b03a92']
-for i,blade in enumerate(tb.blades):
-   lbl='Blade '+str(blade.number)
-   plt.plot(blade.P, marker='x',linestyle='-',label=lbl,markersize=2,color=clr[i])
-plt.legend()
-
-plt.figure(1)
-plt.xlabel('Angle in degrees')
-plt.ylabel('Ct')
-plt.title('Torque at the shaft from each blade in last revolution of '+tb.kind+' configuration')
-for i,blade in enumerate(tb.blades):
-   orderedForces=blade.forcesLastRev.sort_values(by=['Angle'])
-   lbl='Blade '+str(blade.number)
-   plt.plot(orderedForces.Angle, orderedForces.Tz/blade.Torque_ref, marker='x',linestyle='-',label=lbl,markersize=2,color=clr[i])
-plt.legend()
-
-plt.figure(2)
-plt.xlabel('Angle in degrees')
-plt.ylabel('F_t/F*')
-plt.title('Tangential force of each blade of last revolution in '+tb.kind+' configuration')
-for i,blade in enumerate(tb.blades):
-   orderedForces=blade.forcesLastRev.sort_values(by=['Angle'])
-   lbl='Blade '+str(blade.number)
-   Ft=orderedForces.Fpt+orderedForces.Fvt
-   plt.plot(orderedForces.Angle, Ft/blade.Force_ref , marker='x',linestyle='-',label=lbl,markersize=2,color=clr[i])
-plt.legend()
-
-plt.figure(3)
-plt.xlabel('Angle in degrees')
-plt.ylabel('Mc/M*')
-plt.title('Torque at c/4 of each blade of last revolution in '+tb.kind+' configuration')
-for i,blade in enumerate(tb.blades):
-   orderedForces=blade.forcesLastRev.sort_values(by=['Angle'])
-   lbl='Blade '+str(blade.number)
-   Tz=orderedForces.Tz
-   Ft=orderedForces.Fpt+orderedForces.Fvt
-   plt.plot(orderedForces.Angle, Tz/blade.Torque_ref-Ft/blade.Force_ref , marker='x',linestyle='-',label=lbl,markersize=2,color=clr[i])
-plt.legend()
-
-plt.figure(4)
-plt.xlabel('Angle in degrees')
-plt.ylabel('F_n/F*')
-plt.title('Normal force of each blade of last revolution in '+tb.kind+' configuration')
-for i,blade in enumerate(tb.blades):
-   orderedForces=blade.forcesLastRev.sort_values(by=['Angle'])
-   lbl='Blade '+str(blade.number)
-   Fn=orderedForces.Fpn+orderedForces.Fvn
-   plt.plot(orderedForces.Angle, Fn/blade.Force_ref , marker='x',linestyle='-',label=lbl,markersize=2,color=clr[i])
-plt.legend()
-
-plt.show()
 
 
