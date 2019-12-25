@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from scipy import integrate
-
+import matplotlib.pyplot as plt
 #This script loads every forces file into pandas dataframes. Databases are stored at allForcesAsDataframes and their original path at allForcesFiles.
 
 def bindAngle(theta):
@@ -56,12 +56,18 @@ for i in range(0,len(blades)):
     vars()['blade'+str(blades[i])+'_Tz']=vars()['blade'+str(blades[i])+'_Tpz']+vars()['blade'+str(blades[i])+'_Tvz']
     vars()['blade'+str(blades[i])+'_theta']=vars()['blade'+str(blades[i])+'_t']*omega*180/np.pi+offset[i]
 
-    vars()['blade'+str(blades[i])+'_Tavg']=[0]*len(vars()['blade'+str(blades[i])+'_t'])
-    for j in range(2,len(vars()['blade'+str(blades[i])+'_t'])+1):
-        t=vars()['blade'+str(blades[i])+'_t'][0:j]
-        Tz=vars()['blade'+str(blades[i])+'_Tz'][0:j]
-        vars()['blade'+str(blades[i])+'_Tavg'][j-1]=integrate.simps(Tz,t)
-    Tavg=Tavg+np.array(vars()['blade'+str(blades[i])+'_Tavg'])
+for i in range(len(blade1_t)):
+    if blade1_t[i] < 2 * np.pi / omega and blade1_t[i + 1] > 2 * np.pi / omega:
+        tindex = i
 
+for i in range(0,len(blades)):
+    vars()['blade' + str(blades[i]) + '_Tavg'] = [0] * len(vars()['blade' + str(blades[i]) + '_t'])
+    for j in range(tindex, len(vars()['blade' + str(blades[i]) + '_t']) + 1):
+        t = vars()['blade' + str(blades[i]) + '_t'][j - tindex:j]
+        Tz = vars()['blade' + str(blades[i]) + '_Tz'][j - tindex:j]
+        vars()['blade' + str(blades[i]) + '_Tavg'][j - 1] = integrate.simps(Tz, t) / (t[-1] - t[0])
+    Tavg = Tavg + np.array(vars()['blade' + str(blades[i]) + '_Tavg'])
 
 Cp=Tavg*omega/(0.5*rho*Uinf**3*A)
+plt.plot(blade1_t[tindex:-1],Cp[tindex:-1])
+#plt.plot(blade1_t,blade1_Tz+blade2_Tz+blade3_Tz)
