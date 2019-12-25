@@ -8,9 +8,9 @@
 Build  : dev-7cd43ea5f827
 Exec   : mergeMeshes . ../outRegionMesh -overwrite
 Date   : Dec 25 2019
-Time   : 15:27:29
+Time   : 23:22:36
 Host   : "chengpeng-zhao"
-PID    : 27277
+PID    : 4464
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
 nProcs : 1
@@ -89,30 +89,30 @@ patch dicts:
 
 {
     type            patch;
-    nFaces          50;
-    startFace       29700;
+    nFaces          255;
+    startFace       570080;
 }
 
 
 {
     type            patch;
-    nFaces          50;
-    startFace       29750;
+    nFaces          255;
+    startFace       570335;
 }
 
 
 {
     type            wall;
     inGroups        List<word> 1(wall);
-    nFaces          300;
-    startFace       59800;
+    nFaces          710;
+    startFace       1141790;
 }
 
 
 {
     type            patch;
-    nFaces          200;
-    startFace       60100;
+    nFaces          1020;
+    startFace       1142500;
 }
 
 )

@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  dev
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : dev-7cd43ea5f827
+Exec   : simpleFoam -parallel
+Date   : Dec 25 2019
+Time   : 23:23:10
+Host   : "chengpeng-zhao"
+PID    : 4517
+I/O    : uncollated
+Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
+nProcs : 12
+Slaves : 
+11
+(
+"chengpeng-zhao.4518"
+"chengpeng-zhao.4519"
+"chengpeng-zhao.4520"
+"chengpeng-zhao.4521"
+"chengpeng-zhao.4522"
+"chengpeng-zhao.4523"
+"chengpeng-zhao.4524"
+"chengpeng-zhao.4525"
+"chengpeng-zhao.4526"
+"chengpeng-zhao.4527"
+"chengpeng-zhao.4528"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 3 SPLIT FROM 0
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------

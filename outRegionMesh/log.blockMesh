@@ -8,9 +8,9 @@
 Build  : dev-7cd43ea5f827
 Exec   : blockMesh
 Date   : Dec 25 2019
-Time   : 15:27:17
+Time   : 23:22:02
 Host   : "chengpeng-zhao"
-PID    : 27258
+PID    : 4214
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
 nProcs : 1
@@ -52,27 +52,27 @@ Creating cells
 Creating points with scale 0.01
     Block 0 cell size :
         i : 0.03465750497 .. 0.006931500994
-        j : 0.0054
+        j : 0.001058823529
         k : 0.001
     Block 1 cell size :
         i : 0.006931500994 .. 0.03465750497
-        j : 0.0054
+        j : 0.001058823529
         k : 0.001
     Block 2 cell size :
-        i : 0.0054 0.005171953635 0.0054 0.005171953635 
-        j : 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 
+        i : 0.001058823529 0.001049969379 0.001058823529 0.001049969379 .. 0.001049969379 
+        j : 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 
         k : 0.001
     Block 3 cell size :
-        i : 0.0054 0.005171953635 0.0054 0.005171953635 
-        j : 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 
+        i : 0.001058823529 0.001049969379 0.001058823529 0.001049969379 .. 0.001049969379 
+        j : 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 
         k : 0.001
     Block 4 cell size :
-        i : 0.0054 0.005171953635 0.0054 0.005171953635 
-        j : 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 
+        i : 0.001058823529 0.001049969379 0.001058823529 0.001049969379 .. 0.001049969379 
+        j : 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 
         k : 0.001
     Block 5 cell size :
-        i : 0.0054 0.005171953635 0.0054 0.005171953635 
-        j : 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 0.00765855645 .. 0.000765855645 0.007466921873 .. 0.0007466921873 
+        i : 0.001058823529 0.001049969379 0.001058823529 0.001049969379 .. 0.001049969379 
+        j : 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 0.001511752264 .. 0.0001511752264 0.001504268549 .. 0.0001504268549 
         k : 0.001
 
 Adding cell zones
@@ -88,26 +88,26 @@ Writing polyMesh
 Mesh Information
 ----------------
   boundingBox: (-1 -0.135 0) (1 0.135 0.001)
-  nPoints: 30600
-  nCells: 15000
-  nFaces: 60300
-  nInternalFaces: 29700
+  nPoints: 573440
+  nCells: 285600
+  nFaces: 1143520
+  nInternalFaces: 570080
 ----------------
 Patches
 ----------------
-  patch 0 (start: 29700 size: 50) name: inlet
-  patch 1 (start: 29750 size: 50) name: wall-l1
-  patch 2 (start: 29800 size: 50) name: wall-h1
-  patch 3 (start: 29850 size: 50) name: wall-l2
-  patch 4 (start: 29900 size: 50) name: wall-h2
-  patch 5 (start: 29950 size: 50) name: wall-l3
-  patch 6 (start: 30000 size: 50) name: wall-h3
-  patch 7 (start: 30050 size: 50) name: outlet
-  patch 8 (start: 30100 size: 50) name: interface-1
-  patch 9 (start: 30150 size: 50) name: interface-2
-  patch 10 (start: 30200 size: 50) name: interface-3
-  patch 11 (start: 30250 size: 50) name: interface-4
-  patch 12 (start: 30300 size: 30000) name: defaultFaces
+  patch 0 (start: 570080 size: 255) name: inlet
+  patch 1 (start: 570335 size: 50) name: wall-l1
+  patch 2 (start: 570385 size: 50) name: wall-h1
+  patch 3 (start: 570435 size: 255) name: wall-l2
+  patch 4 (start: 570690 size: 255) name: wall-h2
+  patch 5 (start: 570945 size: 50) name: wall-l3
+  patch 6 (start: 570995 size: 50) name: wall-h3
+  patch 7 (start: 571045 size: 255) name: outlet
+  patch 8 (start: 571300 size: 255) name: interface-1
+  patch 9 (start: 571555 size: 255) name: interface-2
+  patch 10 (start: 571810 size: 255) name: interface-3
+  patch 11 (start: 572065 size: 255) name: interface-4
+  patch 12 (start: 572320 size: 571200) name: defaultFaces
 
 End
 

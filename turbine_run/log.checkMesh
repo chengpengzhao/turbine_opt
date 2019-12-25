@@ -8,9 +8,9 @@
 Build  : dev-7cd43ea5f827
 Exec   : checkMesh
 Date   : Dec 25 2019
-Time   : 15:27:33
+Time   : 23:22:45
 Host   : "chengpeng-zhao"
-PID    : 27279
+PID    : 4490
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
 nProcs : 1
@@ -26,11 +26,11 @@ Create polyMesh for time = 0
 Time = 0
 
 Mesh stats
-    points:           397836
+    points:           940676
     internal points:  0
-    faces:            791720
-    internal faces:   393880
-    cells:            197600
+    faces:            1874940
+    internal faces:   934260
+    cells:            468200
     faces per cell:   6
     boundary patches: 9
     point zones:      0
@@ -38,7 +38,7 @@ Mesh stats
     cell zones:       2
 
 Overall number of cells of each type:
-    hexahedra:     197600
+    hexahedra:     468200
     prisms:        0
     wedges:        0
     pyramids:      0
@@ -55,32 +55,32 @@ Checking topology...
    *Number of regions: 2
     The mesh has multiple regions which are not connected by any face.
   <<Writing region information to "0/cellToRegion"
-  <<Writing region 0 with 15000 cells to cellSet region0
+  <<Writing region 0 with 285600 cells to cellSet region0
   <<Writing region 1 with 182600 cells to cellSet region1
 
 Checking patch topology for multiply connected surfaces...
     Patch               Faces    Points   Surface topology                  
-    defaultFaces        395200   397836   ok (non-closed singly connected)  
+    defaultFaces        936400   940676   ok (non-closed singly connected)  
     blade1              340      680      ok (non-closed singly connected)  
     blade2              340      680      ok (non-closed singly connected)  
     blade3              340      680      ok (non-closed singly connected)  
     interface_in        1020     2040     ok (non-closed singly connected)  
-    inlet               50       102      ok (non-closed singly connected)  
-    outlet              50       102      ok (non-closed singly connected)  
-    walls               300      604      ok (non-closed singly connected)  
-    interface_out       200      400      ok (non-closed singly connected)  
+    inlet               255      512      ok (non-closed singly connected)  
+    outlet              255      512      ok (non-closed singly connected)  
+    walls               710      1424     ok (non-closed singly connected)  
+    interface_out       1020     2040     ok (non-closed singly connected)  
 
 Checking geometry...
     Overall domain bounding box (-1 -0.135 0) (1 0.135 0.001)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (-3.82571275e-20 2.258341659e-19 -2.872927442e-17) OK.
+    Boundary openness (8.05157555e-22 1.247750223e-19 3.483831607e-17) OK.
     Max cell openness = 1.498397524e-15 OK.
     Max aspect ratio = 42.92626186 OK.
-    Minimum face area = 1.231226197e-10. Maximum face area = 0.000187150527.  Face area magnitudes OK.
-    Min volume = 1.231226197e-13. Max volume = 1.87150527e-07.  Total volume = 0.0005398438914.  Cell volumes OK.
-    Mesh non-orthogonality Max: 68.17801733 average: 19.54757075
+    Minimum face area = 1.231226197e-10. Maximum face area = 3.669618421e-05.  Face area magnitudes OK.
+    Min volume = 1.231226197e-13. Max volume = 3.669618421e-08.  Total volume = 0.0005398430964.  Cell volumes OK.
+    Mesh non-orthogonality Max: 68.17801733 average: 18.85406614
     Non-orthogonality check OK.
     Face pyramids OK.
     Max skewness = 2.221293378 OK.
