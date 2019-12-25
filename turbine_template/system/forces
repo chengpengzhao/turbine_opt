@@ -21,6 +21,8 @@ forcesBlade1
     rho     rhoInf;
     log         true;
     rhoInf      1e3;
+    pName p;
+    UName U;
     CofR (0 0 0);
 }
 forcesBlade2
@@ -34,6 +36,8 @@ forcesBlade2
     rho     rhoInf;
     log         true;
     rhoInf      1e3;
+    pName p;
+    UName U;
     CofR (0 0 0);
 }
 forcesBlade3
@@ -47,5 +51,7 @@ forcesBlade3
     rho     rhoInf;
     log         true;
     rhoInf      1e3;
+    pName p;
+    UName U;
     CofR (0 0 0);
 }
