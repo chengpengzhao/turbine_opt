@@ -85,7 +85,7 @@ cf_pre = pcoef(xte, yte, rle_pre,
 cf_suc = pcoef(xte, yte, rle_suc,
                x_suc, y_suc, d2ydx2_suc, th_suc,
                'suc')
-x = (1 - np.cos(np.linspace(0, 1, np.ceil(1e3)) * np.pi)) / 2
+x = (1 - np.cos(np.linspace(0, 1, int(np.ceil(1e3))) * np.pi)) / 2
 uppery = np.array([0] * len(x))
 lowery = np.array([0] * len(x))
 for i in range(1, 7):
