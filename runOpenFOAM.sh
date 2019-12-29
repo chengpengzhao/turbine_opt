@@ -62,7 +62,7 @@ checkMesh > log.checkMesh;
 mv system/final_createPatchDict system/createPatchDict;
 createPatch -overwrite > log.createPatch;
 cp 0.orig/* 0
-decomposePar > log.decomposePar;
-mpirun --allow-run-as-root -np 12 simpleFoam -parallel | tee solve.log;
-reconstructPar -constant > log.reconstructPar;
+#decomposePar > log.decomposePar;
+#mpirun --allow-run-as-root -np 12 simpleFoam -parallel | tee solve.log;
+#reconstructPar -constant > log.reconstructPar;
 echo "All done! ..."

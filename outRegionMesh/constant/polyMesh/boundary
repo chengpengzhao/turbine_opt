@@ -20,34 +20,34 @@ FoamFile
     inlet
     {
         type            patch;
-        nFaces          255;
-        startFace       570080;
+        nFaces          120;
+        startFace       118066;
     }
     outlet
     {
         type            patch;
-        nFaces          255;
-        startFace       570335;
+        nFaces          120;
+        startFace       118186;
     }
     defaultFaces
     {
         type            empty;
         inGroups        List<word> 1(empty);
-        nFaces          571200;
-        startFace       570590;
+        nFaces          118560;
+        startFace       118306;
     }
     walls
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          710;
-        startFace       1141790;
+        nFaces          268;
+        startFace       236866;
     }
     interface_out
     {
         type            patch;
-        nFaces          1020;
-        startFace       1142500;
+        nFaces          480;
+        startFace       237134;
     }
 )
 

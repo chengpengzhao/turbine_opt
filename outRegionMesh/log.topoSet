@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : dev-7cd43ea5f827
 Exec   : topoSet
-Date   : Dec 25 2019
-Time   : 23:22:22
+Date   : Dec 29 2019
+Time   : 11:02:35
 Host   : "chengpeng-zhao"
-PID    : 4220
+PID    : 22606
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
 nProcs : 1
@@ -30,13 +30,13 @@ Time = 0
 Created cellZoneSet stationary
     Applying source zoneToCell
     Adding all cells of cellZone "b.*" ...
-    Found matching zone b0 with 12750 cells.
-    Found matching zone b5 with 12750 cells.
-    Found matching zone b4 with 65025 cells.
-    Found matching zone b3 with 65025 cells.
-    Found matching zone b2 with 65025 cells.
-    Found matching zone b1 with 65025 cells.
-    cellZoneSet stationary now size 285600
+    Found matching zone b0 with 840 cells.
+    Found matching zone b5 with 840 cells.
+    Found matching zone b4 with 14400 cells.
+    Found matching zone b3 with 14400 cells.
+    Found matching zone b2 with 14400 cells.
+    Found matching zone b1 with 14400 cells.
+    cellZoneSet stationary now size 59280
     Removing set
 Removing zone b0 at index 0
     Removing set

@@ -21,55 +21,55 @@ FoamFile
     {
         type            empty;
         inGroups        List<word> 1(empty);
-        nFaces          936400;
-        startFace       934260;
+        nFaces          483760;
+        startFace       482246;
     }
     blade1
     {
         type            wall;
         inGroups        List<word> 1(wall);
         nFaces          340;
-        startFace       1870660;
+        startFace       966006;
     }
     blade2
     {
         type            wall;
         inGroups        List<word> 1(wall);
         nFaces          340;
-        startFace       1871000;
+        startFace       966346;
     }
     blade3
     {
         type            wall;
         inGroups        List<word> 1(wall);
         nFaces          340;
-        startFace       1871340;
+        startFace       966686;
     }
     inlet
     {
         type            patch;
-        nFaces          255;
-        startFace       1871680;
+        nFaces          120;
+        startFace       967026;
     }
     outlet
     {
         type            patch;
-        nFaces          255;
-        startFace       1871935;
+        nFaces          120;
+        startFace       967146;
     }
     walls
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          710;
-        startFace       1872190;
+        nFaces          268;
+        startFace       967266;
     }
     AMI_out
     {
         type            cyclicAMI;
         inGroups        List<word> 1(cyclicAMI);
-        nFaces          1020;
-        startFace       1872900;
+        nFaces          480;
+        startFace       967534;
         matchTolerance  0.0001;
         transform       noOrdering;
         neighbourPatch  AMI_in;
@@ -80,7 +80,7 @@ FoamFile
         type            cyclicAMI;
         inGroups        List<word> 1(cyclicAMI);
         nFaces          1020;
-        startFace       1873920;
+        startFace       968014;
         matchTolerance  0.0001;
         transform       noOrdering;
         neighbourPatch  AMI_out;

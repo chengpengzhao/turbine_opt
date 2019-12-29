@@ -11,15 +11,15 @@ from scipy.optimize import fsolve
 # ========================================================================================
 # mesh parameters
 Rregion = 4
-Length = 200
+Length = 30
 Width = 27
 L0 = (Length - Width) / 2
 FCells = 70
-DCells = 100
+DCells = 10
 CellsCircle = 3 * (2 * FCells + 2 * DCells)
 CellsV = round(CellsCircle / 4)
 #CellsV=50
-CellsP = 50
+CellsP = round(CellsV*L0/Width)
 GradingP = 5
 GradingV = 10
 length_z = 0.1

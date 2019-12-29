@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : dev-7cd43ea5f827
 Exec   : checkMesh
-Date   : Dec 25 2019
-Time   : 23:22:09
+Date   : Dec 29 2019
+Time   : 11:02:34
 Host   : "chengpeng-zhao"
-PID    : 4216
+PID    : 22599
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/outRegionMesh
 nProcs : 1
@@ -26,11 +26,11 @@ Create polyMesh for time = 0
 Time = 0
 
 Mesh stats
-    points:           573440
+    points:           119548
     internal points:  0
-    faces:            1143520
-    internal faces:   570080
-    cells:            285600
+    faces:            237614
+    internal faces:   118066
+    cells:            59280
     faces per cell:   6
     boundary patches: 13
     point zones:      0
@@ -38,7 +38,7 @@ Mesh stats
     cell zones:       6
 
 Overall number of cells of each type:
-    hexahedra:     285600
+    hexahedra:     59280
     prisms:        0
     wedges:        0
     pyramids:      0
@@ -56,34 +56,34 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
     Patch               Faces    Points   Surface topology                  
-    inlet               255      512      ok (non-closed singly connected)  
-    wall-l1             50       102      ok (non-closed singly connected)  
-    wall-h1             50       102      ok (non-closed singly connected)  
-    wall-l2             255      512      ok (non-closed singly connected)  
-    wall-h2             255      512      ok (non-closed singly connected)  
-    wall-l3             50       102      ok (non-closed singly connected)  
-    wall-h3             50       102      ok (non-closed singly connected)  
-    outlet              255      512      ok (non-closed singly connected)  
-    interface-1         255      512      ok (non-closed singly connected)  
-    interface-2         255      512      ok (non-closed singly connected)  
-    interface-3         255      512      ok (non-closed singly connected)  
-    interface-4         255      512      ok (non-closed singly connected)  
-    defaultFaces        571200   573440   ok (non-closed singly connected)  
+    inlet               120      242      ok (non-closed singly connected)  
+    wall-l1             7        16       ok (non-closed singly connected)  
+    wall-h1             7        16       ok (non-closed singly connected)  
+    wall-l2             120      242      ok (non-closed singly connected)  
+    wall-h2             120      242      ok (non-closed singly connected)  
+    wall-l3             7        16       ok (non-closed singly connected)  
+    wall-h3             7        16       ok (non-closed singly connected)  
+    outlet              120      242      ok (non-closed singly connected)  
+    interface-1         120      242      ok (non-closed singly connected)  
+    interface-2         120      242      ok (non-closed singly connected)  
+    interface-3         120      242      ok (non-closed singly connected)  
+    interface-4         120      242      ok (non-closed singly connected)  
+    defaultFaces        118560   119548   ok (non-closed singly connected)  
 
 Checking geometry...
-    Overall domain bounding box (-1 -0.135 0) (1 0.135 0.001)
+    Overall domain bounding box (-0.15 -0.135 0) (0.15 0.135 0.001)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (8.127585401e-22 1.259529447e-19 3.516734163e-17) OK.
-    Max cell openness = 2.908429004e-16 OK.
-    Max aspect ratio = 32.73208896 OK.
-    Minimum face area = 2.348644535e-08. Maximum face area = 3.669618421e-05.  Face area magnitudes OK.
-    Min volume = 2.348644535e-11. Max volume = 3.669618421e-08.  Total volume = 0.0005349734835.  Cell volumes OK.
-    Mesh non-orthogonality Max: 44.80947003 average: 18.18976103
+    Boundary openness (-1.439677175e-19 1.429319785e-19 6.963773736e-17) OK.
+    Max cell openness = 2.560337257e-16 OK.
+    Max aspect ratio = 2.700201651 OK.
+    Minimum face area = 1.0606439e-07. Maximum face area = 9.37429965e-06.  Face area magnitudes OK.
+    Min volume = 1.0606439e-10. Max volume = 9.37429965e-09.  Total volume = 7.59735953e-05.  Cell volumes OK.
+    Mesh non-orthogonality Max: 44.59371514 average: 18.75469432
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 1.003999173 OK.
+    Max skewness = 0.9959185337 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.

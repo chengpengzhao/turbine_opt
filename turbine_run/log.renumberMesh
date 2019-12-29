@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : dev-7cd43ea5f827
 Exec   : renumberMesh -overwrite
-Date   : Dec 25 2019
-Time   : 23:22:41
+Date   : Dec 29 2019
+Time   : 11:02:49
 Host   : "chengpeng-zhao"
-PID    : 4489
+PID    : 22628
 I/O    : uncollated
 Case   : /opt/OpenFOAM/zcp-dev/run/turbine_opt/turbine_run
 nProcs : 1
@@ -23,10 +23,10 @@ Create time
 
 Create mesh for time = 0
 
-Mesh size: 468200
+Mesh size: 241880
 Before renumbering :
     band           : 624
-    profile        : 218135140
+    profile        : 100128504
 
 Using default renumberMethod.
 
@@ -37,7 +37,7 @@ Reading geometric fields
 
 After renumbering :
     band           : 624
-    profile        : 218135140
+    profile        : 100128504
 
 Writing mesh to "constant"
 
